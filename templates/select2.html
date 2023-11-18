@@ -1,12 +1,12 @@
-{% extends "base.html" %}
+{% extends "select.html" %}
 
 
 {% block body %}
 
     <form method="POST" action="/displayevents">
-        <label for="swimmer">Please select a swimmer: </label>
+        <label for="swimmerData">Please select a file: </label>
 
-        <select name="swimmer" id="swimmer">
+        <select name="swimmerData" id="swimmerData">
 
             {% for name in data %}
 
