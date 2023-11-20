@@ -32,15 +32,14 @@ def build_time_string(num_time):
 
 def get_swimmers_data(filename):
     """ """
-    print(f"Debug: Filename - {filename}")  # Add this line
-    # name, age, distance, stroke = filename.removesuffix(".txt").split("-")
+    name, age, distance, stroke = filename.removesuffix(".txt").split("-")
     with open(FOLDER + filename) as fh:
         data = fh.read()
-        times = data.strip().split(",")
-        converts = []  # empty list
-        for t in times:
-            converts.append(convert2hundreths(t))
-        average = build_time_string(mean(converts))
+    times = data.strip().split(",")
+    converts = []  # empty list
+    for t in times:
+        converts.append(convert2hundreths(t))
+    average = build_time_string(mean(converts))
 
     return name, age, distance, stroke, times, converts, average
 
