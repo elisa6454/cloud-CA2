@@ -1,16 +1,16 @@
-{% extends "select.html" %}
+{% extends "base.html" %}
 
 
 {% block body %}
 
-    <form method="POST" action="/displayevents">
-        <label for="swimmerData">Please select a file: </label>
+    <form method="POST" action="/chart">
+        <label for="event">Please select a file: </label>
 
-        <select name="swimmerData" id="swimmerData">
+        <select name="event" id="event">
 
-            {% for name in data %}
+            {% for event in swimmer_event %}
 
-                <option value="{{name}}">{{ name }}</option>
+                <option value="{{ event }}">{{ event }}</option>
             
             {% endfor %}
 
